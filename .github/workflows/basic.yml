@@ -51,7 +51,7 @@ jobs:
                           --instance-type t2.micro \
                           --key-name common \
                           --security-group-ids sg-0042303434a4b0f55 \
-                          --iam-instance-profile VHTRole \
+                          --iam-instance-profile arn:aws:iam::322682279849:role/VHTRole \
                           --subnet-id subnet-0c7280f8b06210177 \
                           --output text \
                           | awk '/INSTANCE/{print $9}')
