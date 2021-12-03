@@ -46,13 +46,13 @@ jobs:
         if: env.AWS_INSTANCE_ID == ''
         run: |
           instance_id=$(aws ec2 run-instances \
-                          --image-id ${{ secrets.AWS_AMI_ID }} \
+                          --image-id ami-0c5eeabe11f3a2685 \
                           --count 1 \
                           --instance-type t2.micro \
                           --key-name common \
-                          --security-group-ids ${{ secrets.AWS_SECURITY_GROUP_ID }} \
-                          --iam-instance-profile ${{ secrets.AWS_IAM_PROFILE }} \
-                          --subnet-id ${{ secrets.AWS_SUBNET_ID }} \
+                          --security-group-ids sg-0042303434a4b0f55 \
+                          --iam-instance-profile VHTRole \
+                          --subnet-id subnet-0c7280f8b06210177 \
                           --output text \
                           | awk '/INSTANCE/{print $9}')
           echo "instance_id = $instance_id"
