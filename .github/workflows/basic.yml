@@ -49,7 +49,6 @@ jobs:
                           --image-id "ami-0c5eeabe11f3a2685" \
                           --count 1 \
                           --instance-type t2.micro \
-                          --key-name common \
                           --security-group-ids "sg-0042303434a4b0f55" \
                           --iam-instance-profile "arn:aws:iam::322682279849:role/VHTRole" \
                           --subnet-id "subnet-0c7280f8b06210177" \
