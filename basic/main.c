@@ -3,7 +3,7 @@
  *----------------------------------------------------------------------------*/
 
 #include "unity.h"
-#include <stdio.h>
+#include <stdio.h
 
 /* Application function to test */
 static int my_sum(int a, int b) {
