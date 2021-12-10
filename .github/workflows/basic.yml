@@ -62,7 +62,6 @@ jobs:
         secret_access_key: ${{ secrets.AWS_ACCESS_KEY_SECRET }}
         security_group_id: ${{ secrets.AWS_SECURITY_GROUP_ID }}
         session_token: ''
-        ssh_key_name: common
         subnet_id: ${{ secrets.AWS_SUBNET_ID }}
         terminate_ec2_instance: 'true'
         vht_in: ./basic/
