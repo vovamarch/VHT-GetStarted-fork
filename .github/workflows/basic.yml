@@ -15,13 +15,13 @@ name: Arm Virtual Hardware basic example - github hosted - remote AWS via GH plu
 
 on:
   push:
-    branches: [ main ]
+    branches: [ run_with_my_avhstack ]
     paths:
       - .github/workflows/basic.yml
       - basic/**/*
       - requirements.txt
   pull_request:
-    branches: [ main ]
+    branches: [ run_with_my_avhstack ]
     paths:
       - .github/workflows/basic.yml
       - basic/**/*
@@ -62,10 +62,11 @@ jobs:
         secret_access_key: ${{ secrets.AWS_ACCESS_KEY_SECRET }}
         security_group_id: ${{ secrets.AWS_SECURITY_GROUP_ID }}
         session_token: ''
+        ssh_key_name: common
         subnet_id: ${{ secrets.AWS_SUBNET_ID }}
         terminate_ec2_instance: 'true'
         vht_in: ./basic/
-
+        ssh_key_name: common
     - name: Fetch results from VHT
       id: result
       run: |
